@@ -48,7 +48,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 }
 
 .dark-intro.active .demon-body {
-    animation: demonBody 7s linear both;
+    animation: demonBody 8s linear both;
 }
 
 @keyframes demonBody {
@@ -57,21 +57,26 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
         transform: scale(1.18);
         filter: grayscale(1) brightness(0) contrast(1.5);
     }
-    8% {
+
+    7% {
         opacity: 1;
         filter: grayscale(1) brightness(.28) contrast(1.6);
     }
-    20% {
+
+    18% {
         filter: grayscale(1) brightness(.75) contrast(1.8);
     }
-    34% {
+
+    42.5% {
         opacity: 1;
         transform: scale(1.03);
     }
-    38% {
+
+    47.5% {
         opacity: 0;
         transform: scale(1.35);
     }
+
     100% {
         opacity: 0;
     }
@@ -93,6 +98,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-face:not(.demon-ghost) {
     animation: demonFace 7s steps(1,end) both;
+    animation-delay: 1s;
 }
 
 @keyframes demonFace {
@@ -151,6 +157,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-ghost {
     animation: demonGhost 7s steps(1,end) both;
+    animation-delay: 1s;
 }
 
 @keyframes demonGhost {
@@ -201,6 +208,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-shadows {
     animation: demonShadows 7s ease-in-out both;
+    animation-delay: 1s;
 }
 
 @keyframes demonShadows {
@@ -230,6 +238,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-red {
     animation: demonRed 7s steps(1,end) both;
+    animation-delay: 1s;
 }
 
 @keyframes demonRed {
@@ -254,6 +263,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-flash {
     animation: demonWhiteFlash 7s steps(1,end) both;
+    animation-delay: 1s;
 }
 
 @keyframes demonWhiteFlash {
@@ -276,6 +286,7 @@ body{font-family:"Courier New",monospace;color:var(--white);overflow:hidden}
 
 .dark-intro.active .demon-blackout {
     animation: demonBlackout 7s steps(1,end) both;
+    animation-delay: 1s;
 }
 
 @keyframes demonBlackout {
@@ -866,11 +877,11 @@ function playDarkIntro() {
     void darkIntro.offsetWidth;
     darkIntro.classList.add('active');
 
-    // Po 7 sekundách zobrazíme rozcestník
-    later(() => {
-        darkIntro.classList.remove('active');
-        finish();
-    }, 7000);
+    // Po 8 sekundách zobrazíme rozcestník
+later(() => {
+    darkIntro.classList.remove('active');
+    finish();
+}, 8000);
 }
 
 // Přeskočení intra
